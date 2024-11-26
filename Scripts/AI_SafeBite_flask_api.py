@@ -1,13 +1,20 @@
 from flask import Flask, request, jsonify
-import joblib
+import joblib, pickle
 import pandas as pd
 
 # Initialize Flask app:
 app = Flask(__name__)
 
-# Load the trained model and encoder:
-loaded_encoder = joblib.load("loo_encoder.pkl")
-loaded_model = joblib.load("final_rf_model.pkl")
+
+
+# loaded_encoder = pickle.load("Model/leave_one_out_encoder.pkl")
+# loaded_model = pickle.load("Model/random_forest_model.pkl")
+with open("Model/leave_one_out_encoder.pkl", "rb") as file:
+    loaded_encoder = pickle.load(file)
+
+with open("Model/random_forest_model.pkl", "rb") as file:
+    loaded_model = pickle.load(file)
+
 
 @app.route('/')
 def home():
