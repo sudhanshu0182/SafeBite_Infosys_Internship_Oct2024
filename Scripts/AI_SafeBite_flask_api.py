@@ -35,9 +35,6 @@ def predict():
     # Concatenate encoded columns back with the numeric columns
     input_data = pd.concat([input_data.drop(categorical_columns, axis=1), input_data_encoded], axis=1)
 
-    # Ensure the DataFrame has the correct column order
-    final_input = input_data[['Food Product', 'Main Ingredient', 'Sweetener', 'Fat/Oil', 'Seasoning', 'Allergens', 'Price ($)', 'Customer rating (Out of 5)']]
-
     # Make prediction using the trained model
     prediction = loaded_model.predict(final_input)
 
