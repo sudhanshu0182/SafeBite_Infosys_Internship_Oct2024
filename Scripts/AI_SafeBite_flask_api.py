@@ -36,10 +36,10 @@ def predict():
     input_data = pd.concat([input_data.drop(categorical_columns, axis=1), input_data_encoded], axis=1)
 
     # Make prediction using the trained model
-    prediction = loaded_model.predict(final_input)
+    prediction = loaded_model.predict(input_data)
 
     # Interpret model output
-    result = "This product contains allergens" if prediction[0] == 0 else "This product does not contain allergens"
+    result = "This product contains allergens" if prediction == 0 else "This product does not contain allergens"
 
     # Return the result as a JSON response
     response = jsonify(result=result)
