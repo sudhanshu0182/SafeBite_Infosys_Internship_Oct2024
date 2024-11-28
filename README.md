@@ -70,11 +70,10 @@ cd SafeBite_Infosys_Internship_Oct2024
 ### 2. Install Required Packages
 
 Make sure you have **pip** installed. 
-
-Install the necessary packages:
+To simplify the installation of dependencies, use the requirements.txt file 
 
 ```bash
-pip install pandas scikit-learn flask streamlit joblib
+pip install -r requirements.txt
 ```
 
 ### 3. Prepare the Datasets
