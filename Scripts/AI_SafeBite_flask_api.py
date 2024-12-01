@@ -43,6 +43,4 @@ def predict():
     return response
 
 if __name__ == '__main__':
-    # app.run(debug=True)
-    debug_mode = os.getenv('FLASK_DEBUG', 'false').lower() == 'true'
-    app.run(debug=debug_mode)
+    app.run(debug=True)
